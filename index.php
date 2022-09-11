@@ -62,7 +62,28 @@
                     }
                     ?>
                 </thead>
+                <!-- Create new file with PHP -->
+                <div class="row justify-content-center">
+                    <form action="" method="POST">
+                        <div class="form-group ">
+                            <label>Create new file</label>
+                            <input type="text" name="file" class="form-control" value="">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary" name="create">Create</button>
+                        </div>
+                    </form>
+                </div>
+                <?php
+                $createFile = fopen("newFile.txt", "w") or die("File is not created");
+                $text = "File is created";
+                fwrite($createFile, $text);
+                fclose($createFile);
 
+                if (isset($_POST['create'])) {
+                    $createFile = fopen("newFile.txt", "w") or die("File is not created");
+                }
+                ?>
         </div>
     </div>
 
