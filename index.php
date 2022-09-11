@@ -61,6 +61,7 @@
                         }
                     }
                     ?>
+
                 </thead>
                 <!-- Create new file with PHP -->
                 <div class="row justify-content-center">
@@ -72,16 +73,23 @@
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary" name="create">Create</button>
                         </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-danger" name="delete">Delete</button>
+                        </div>
                     </form>
                 </div>
                 <?php
-                $createFile = fopen("newFile.txt", "w") or die("File is not created");
+                $createFile = fopen("PleaseDeleteMe.txt", "w") or die("File is not created");
                 $text = "File is created";
                 fwrite($createFile, $text);
                 fclose($createFile);
 
                 if (isset($_POST['create'])) {
-                    $createFile = fopen("newFile.txt", "w") or die("File is not created");
+                    $createFile = fopen("PleaseDeleteMe.txt", "w") or die("File is not created");
+                    
+                }
+                if (isset($_POST['delete'])) {
+                    unlink('PleaseDeleteMe.txt');
                 }
                 ?>
         </div>
