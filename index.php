@@ -86,12 +86,41 @@
 
                 if (isset($_POST['create'])) {
                     $createFile = fopen("PleaseDeleteMe.txt", "w") or die("File is not created");
-                    
                 }
                 if (isset($_POST['delete'])) {
                     unlink('PleaseDeleteMe.txt');
                 }
+
                 ?>
+                <!-- // Uploading images -->
+                
+                        <br>
+                        <br>
+                        <br>
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            <input type="file" name="image" />
+                            <input type="submit" />
+                        </form>
+
+                        <?php
+                        // print('<pre>');
+                        // print_r($_FILES['image']);
+                        // print_r($_FILES['image']['name']);
+                        // print_r($_FILES['image']['size']);
+                        // print_r($_FILES['image']['tmp_name']);
+                        // print_r($_FILES['image']['type']);
+                        // print('</pre>');
+
+                        if (isset($_FILES['image'])) {
+                            $file_name = $_FILES['image']['name'];
+                            $file_size = $_FILES['image']['size'];
+                            $file_tmp = $_FILES['image']['tmp_name'];
+                            $file_type = $_FILES['image']['type'];
+                            move_uploaded_file($file_tmp, "./" . $file_name);
+                            echo "Success";
+                        }
+                        ?>
+
         </div>
     </div>
 
