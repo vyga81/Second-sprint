@@ -9,7 +9,7 @@ The app displays folder contents and allows users to:
 6.Delete file
 7.Navigate through folders.
 
-Used bootstrap@5.2.0 for already build in classes and styling, and make responsive for different devices.
+Used bootstrap@5.2.0 for already build in classes and styling.
 
 
 
