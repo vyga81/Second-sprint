@@ -3,11 +3,17 @@ This application Navigate through files.
 The app displays folder contents and allows users to:
 
 1.Login
+
 2.Logout
+
 3.Create file
+
 4.Upload image
+
 5.Download image
+
 6.Delete file
+
 7.Navigate through folders.
 
 Used bootstrap@5.2.0 for already build in classes and styling.
